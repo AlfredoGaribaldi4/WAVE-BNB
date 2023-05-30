@@ -1,1 +1,7 @@
 <h1>Add a new Booking</h1>
+
+<%= simple_form_for [@board, @booking] do |f| %>
+  <%= f.input :date_check_in, as: :date %>
+  <%= f.input :date_check_out, as: :date %>
+  <%= f.submit "Book this board!" %>
+<% end %>
