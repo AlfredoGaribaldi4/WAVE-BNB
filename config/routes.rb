@@ -9,8 +9,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
-  resources :users, only: [:new, :create]
-
   resources :bookings, only: [:index, :edit, :update, :destroy] do
     resources :reviews, only: [:new, :create]
   end
