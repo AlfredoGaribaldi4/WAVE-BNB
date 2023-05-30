@@ -1,1 +1,65 @@
 // Specific CSS for your home-page
+body {
+  background-image: url("https://images.unsplash.com/photo-1507880572231-f85401ce76e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Roboto Flex', sans-serif;
+  color: #211600;
+}
+
+.wave-img {
+  background-image: url("https://images.unsplash.com/photo-1531722569936-825d3dd91b15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 400px;
+  border-bottom-right-radius: 20px;
+}
+
+.container {
+  height: 80%;
+  width: 1000px;
+  border-radius: 20px;
+  margin: 60px auto;
+}
+
+.landing-page {
+  width: 600px;
+  background-color: rgba(215, 233, 244, 0.8);
+  border-bottom-left-radius: 20px;
+  padding: 20px;
+
+  h1 {
+    text-align: center;
+    padding-top: 50px;
+    font-family: 'Calligraffitti', cursive;
+    font-size: 64px;
+  }
+
+  p {
+    padding-top: 50px;
+    padding-left: 20px;
+  }
+}
+
+#btn-orange{
+  padding: 10px 80px;
+  background-color: #C78601;
+  box-shadow: 1px 1px 10px gray;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 28px;
+  color: #f0dcb4;
+  margin-top: 300px;
+  width: 60%;
+
+  &:hover {
+    background-color: #F7A701;
+    opacity: 0.9;
+  }
+}
+
+.home-navbar {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
