@@ -1,0 +1,23 @@
+<span class="border border-dark"><div class="banner container rounded-3" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://hardcore.com.br/wp-content/uploads/sites/21/2022/02/Coxos_no_limite.jpeg'); ">
+<div class="text-center text-white">
+    <h3><strong>RENT YOUR SURFBOARD</strong></h3>
+  </div>
+</div></span>
+
+<div class="container py-5">
+  <div class="row">
+    <% @boards.each do |board| %>
+      <div class="co-12 col-sm-6 col-md-4 mb-3">
+        <%= link_to board_path(board), class:"text-decoration-none" do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://www.mundo-surf.com/10263/prancha-de-surf-channel-island-neck-beard.jpg')">
+            <%= board.title %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-around mb-3">
+    <%= link_to "Rent your own surfboard", new_board_path, class: "btn btn-light rounded" %>
+  </div>
+</div>

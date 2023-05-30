@@ -1,0 +1,17 @@
+<div class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="form-card">
+        <h1>Lend your surfboard to others</h1>
+        <%= simple_form_for @board do |f| %>
+        <%= f.input :category, placeholder: 'Shortboard' %>
+        <%= f.input :title, placeholder: 'Channel Islands Neck Beard' %>
+        <%= f.input :description, placeholder: 'Have good drive and be quick on your feet. The perfect board for the smaller days.' %>
+        <%= f.input :price_per_day, placeholder: '25€' %>
+        <%= f.input :location, placeholder: 'Costa da Caparica' %>
+        <%= f.button :submit, class: 'btn btn-outline-primary rounded' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
