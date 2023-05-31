@@ -9,8 +9,8 @@
     <% @boards.each do |board| %>
       <div class="co-12 col-sm-6 col-md-4 mb-3">
         <%= link_to board_path(board), class:"text-decoration-none" do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://www.mundo-surf.com/10263/prancha-de-surf-channel-island-neck-beard.jpg')">
-            <%= board.title %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path board.photo.key, height: 300, crop: :fill %>')"
+>            <%= board.title %>
           </div>
         <% end %>
       </div>
