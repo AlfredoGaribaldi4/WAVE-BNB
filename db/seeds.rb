@@ -10,18 +10,16 @@ puts "Cleaning database..."
 Board.destroy_all
 User.destroy_all
 
-puts 'Creating surfboards...'
+user_booker = User.create(email: "bob@gmail.com", password: "111111")
 
-user = User.create(email: "bob@gmail.com", password: "111111")
+user_owner = User.create(email: "charles@gmail.com", password: "111111")
 
 3.times do
-  board = Board.create(category: Faker::Commerce.product_name,
+  Board.create(category: Faker::Commerce.product_name,
     title: Faker::Company.name,
-    description: Faker::Lorem.paragraph(sentence_count: 3),
+    description: Faker::ChuckNorris.fact,
     price_per_day: Faker::Number.between(from: 1, to: 100),
     location: Faker::Address.city,
-    user: user)
-  puts "Created #{board.title}"
+    user: user_owner
+    )
 end
-
-puts 'Finished!'
