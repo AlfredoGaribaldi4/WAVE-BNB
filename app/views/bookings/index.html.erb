@@ -1,5 +1,27 @@
-<h1>Bookings#index</h1>
+<div class="container">
 
-<% @bookings.each do |booking| %>
-  <%= booking.id %>
-<% end %>
+  <%= render "shared/navbar" %>
+
+  <div class="pages">
+    <h1>My bookings</h1>
+    <ul>
+      <% @bookings.each do |booking| %>
+        <li> <%= booking.id %></li>
+      <% end %>
+    </ul>
+
+    <hr>
+
+    <h1>My Boards</h1>
+    <% @boards.each do |board| %>
+      <%= board.title %> - <%= board.description %>
+      <% board.bookings.each do |booking| %>
+        <%= booking.board.title %>
+        <%= booking.status %>
+        <%= link_to "accept", booking_accept_path(booking) %>
+        <%= link_to "decline", booking_decline_path(booking) %>
+        <hr>
+      <% end %>
+    <% end %>
+  </div>
+</div>
