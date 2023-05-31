@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:edit]
+  before_action :set_booking, only: [:edit, :destroy]
   before_action :set_board, only: [:new, :create]
 
   def index
@@ -31,6 +31,8 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @booking.destroy
+    redirect_to bookings_path, status: :see_other
   end
 
   def accept
