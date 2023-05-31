@@ -4,5 +4,5 @@ class Board < ApplicationRecord
 
   has_one_attached :photo
 
-  validates :title, :price_per_day, :location, presence: true
+  validates :title, :price_per_day, :location, :photo, presence: true
 end

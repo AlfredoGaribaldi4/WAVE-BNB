@@ -11,7 +11,7 @@ body {
   background-image: url("https://images.unsplash.com/photo-1531722569936-825d3dd91b15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80");
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 600px;
   width: 30%;
   border-radius: 20px;
   margin-right: 20px;
@@ -44,15 +44,16 @@ body {
 }
 
 #btn-orange{
-  padding: 10px 80px;
+  padding: 5px 30px;
   background-color: #C78601;
   box-shadow: 1px 1px 10px gray;
   border-radius: 12px;
-  font-weight: 500;
+  font-weight: lighter;
   font-size: 28px;
   color: #f0dcb4;
   margin-top: 300px;
   width: 60%;
+
 
   &:hover {
     background-color: #F7A701;
