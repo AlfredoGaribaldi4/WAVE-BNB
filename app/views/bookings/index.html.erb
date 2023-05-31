@@ -15,6 +15,13 @@
     <h1>My Boards</h1>
     <% @boards.each do |board| %>
       <%= board.title %> - <%= board.description %>
+      <% board.bookings.each do |booking| %>
+        <%= booking.board.title %>
+        <%= booking.status %>
+        <%= link_to "accept", booking_accept_path(booking) %>
+        <%= link_to "decline", booking_decline_path(booking) %>
+        <hr>
+      <% end %>
     <% end %>
   </div>
 </div>
