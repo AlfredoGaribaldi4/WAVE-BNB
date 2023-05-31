@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
 
   def index
     @boards = Board.where(user: current_user)
-    @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
   end
 
   def new
@@ -33,7 +33,20 @@ class BookingsController < ApplicationController
   def destroy
   end
 
+  def accept
+    @booking = Booking.find(params[:booking_id])
+    @booking.confirmed!
+    redirect_to bookings_path
+  end
+
+  def decline
+    @booking = Booking.find(params[:booking_id])
+    @booking.declined!
+    redirect_to bookings_path
+  end
+
   private
+
 
   def set_booking
     @booking = Booking.find(params[:id])
