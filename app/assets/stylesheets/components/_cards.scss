@@ -19,33 +19,33 @@
   background-size: cover;
 }
 
-.card-trip {
+.card-surfboard {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-trip > img {
+.card-surfboard > img {
   height: 300px;
   width: 100%;
   object-fit: cover;
   background-position: center;
 }
 
-.card-trip h2 {
+.card-surfboard h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-trip p {
+.card-surfboard p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
 }
 
 
-.card-trip .card-trip-infos {
+.card-surfboard .card-surfboard-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -53,20 +53,16 @@
   padding-bottom: 70px;
 }
 
-.card-trip-infos .card-trip-user {
+.card-surfboard-infos .card-surfboard-user {
   right: 16px;
   top: -20px;
   width: 40px;
 }
 
-.card-trip .grid {
+.card-surfboard .grid {
   display: grid;
   grid-gap: 6px;
   background-position: center;
   background-size: cover;
 }
 
-.card-trip .main-img {
-  background-position: center;
-  background-size: cover;
-}
