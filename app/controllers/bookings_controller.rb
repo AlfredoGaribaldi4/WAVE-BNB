@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   before_action :set_board, only: [:new, :create]
 
   def index
+    @boards = Board.where(user: current_user)
     @bookings = Booking.all
   end
 
@@ -13,6 +14,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.board = @board
+    @booking.user = current_user
     @booking.total_price = (@booking.date_check_out - @booking.date_check_in) * @board.price_per_day
 
     if @booking.save
