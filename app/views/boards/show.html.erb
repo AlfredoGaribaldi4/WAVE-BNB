@@ -1,10 +1,8 @@
-
-  <%= render "shared/navbar" %>
 <div class="container">
   <div class="show-imgs row mb-2" style="height:16rem;">
-    <div class="col-8 main-img" style="background-size:cover; background-color:white; border-radius: 10px; height: 200px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg'); height:100%">
+    <div class="main-img" style="background-size:cover; background-color:white; border-radius: 10px; height: 200px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg'); height:100%">
     </div>
-    <div class="col-4 grid">
+    <%# <div class="col-4 grid">
       <div class="my-2" style="border-radius: 10px; height: 50px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
       </div>
       <div class="my-2" style="border-radius: 10px; height: 50px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
@@ -12,29 +10,26 @@
       <div class="my-2" style="border-radius: 10px; height: 50px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
       </div>
       <div class="my-2" style="border-radius: 10px; height: 50px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
-      </div>
-    </div>
+      </div> %>
+    <%# </div> %>
   </div>
-  <div class="show-info row mb-2" style="height:16rem; border-radius: 10px;">
-    <div class="d-flex justify-content-between">
-      <div class="descriptions">
-        <h1><%= @board.title %></h1>
-        <h2><%= @board.category %></h2>
-        <p><%= @board.description %></p>
+
+  <div class="pages">
+    <div class="show-info row mb-2" style="height:16rem; border-radius: 10px;">
+      <div class="d-flex justify-content-between">
+        <div class="descriptions">
+          <h1><%= @board.title %></h1>
+          <h2><%= @board.category %></h2>
+          <p><%= @board.description %></p>
+        </div>
+
+        <div class="d-flex flex-column align-items-center">
+          <img src="https://img.freepik.com/premium-vector/man-character-avatar-icon-surfer-character-wetsuit-with-surfboard_51635-2323.jpg" class="card-trip-user avatar-bordered" />
+          <h2><%= @board.price_per_day %></h2>
+          <p><%= @board.location %></p>
+        </div>
       </div>
-      <div class="d-flex flex-column align-items-center">
-        <img src="https://img.freepik.com/premium-vector/man-character-avatar-icon-surfer-character-wetsuit-with-surfboard_51635-2323.jpg" class="card-trip-user avatar-bordered" />
-        <h2>Francisco Mimir</h2>
-        <h2><%= @board.price_per_day %></h2>
-        <p><%= @board.location %></p>
-      </div>
     </div>
-    <div class="board-map" style="border-radius: 10px; height: 200px; background-image: url('https://i.stack.imgur.com/HILmr.png')">
-    </div>
-    <div>
-      <h1>
-        <%= link_to "Go Back", boards_path %>
-      </h1>
-    </div>
+    <%= link_to "Book this board now", new_board_booking_path(@board), class:"btn-all" %>
   </div>
 </div>
