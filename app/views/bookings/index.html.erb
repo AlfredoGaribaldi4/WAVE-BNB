@@ -3,7 +3,7 @@
     <h1>My bookings</h1>
     <ul>
       <% @bookings.each do |booking| %>
-        <li> <%= booking.id %></li>
+        <li> <%= booking.board.title %></li>
       <% end %>
     </ul>
 
@@ -11,12 +11,23 @@
 
     <h1>My Boards</h1>
     <% @boards.each do |board| %>
-      <%= board.title %> - <%= board.description %> | <%= link_to "delete", board_path(board), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      <hr>
-      <% board.bookings.each do |booking| %>
-        <%= booking.board.title %> | <%= link_to "delete", bookings_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-        <p>Status: <%= booking.status %></p> <%= link_to "accept", booking_accept_path(booking) %> | <%= link_to "decline", booking_decline_path(booking) %>
-        <hr>
-      <% end %>
+      <h5> <%= board.title %> | <%= link_to "delete", board_path(board), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></h5>
     <% end %>
+    <hr>
+
+
+    <h1>My Requests</h1>
+      <% @boards.each do |board| %>
+        <h5> <%= board.title %>
+          <% board.bookings.each do |booking| %>
+
+            <% if booking.pending? %>
+              <p>Status: <%= booking.status %></p> <%= link_to "accept", booking_accept_path(booking) %> | <%= link_to "decline", booking_decline_path(booking) %>
+            <% else %>
+              <p>Status: <%= booking.status %></p>
+            <% end %>
+            <hr>
+        <% end %>
+      <% end %>
+
 </div>
