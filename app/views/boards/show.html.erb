@@ -1,57 +1,40 @@
-<div class="container">
 
   <%= render "shared/navbar" %>
-
-  <div class="pages">
-
-    <div class="card-trip">
-      <div class="container">
-        <div class="row">
-          <div class="main-img col-8" style="height: 200px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
-            </div>
-            <div class="col-4">
-              <div class="grid">
-                <div style="height: 100px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
-                </div>
-                <div style="height: 100px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
-                </div>
-                <div style="height: 100px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
-                </div>
-                <div style="height: 100px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex card-trip-infos position-relative">
-          <div>
-            <h1><%#= @board.title %></h1>
-            <h1>Lost SurfBoard 5.11</h1>
-            <h2><%#= @board.category %></h2>
-            <h2>Performance Shortboard</h2>
-            <p><%#= @board.description %></p>
-            <p>Brand new lost surf board in optimum conditions.</p>
-          </div>
-          <div class="d-flex flex-column align-items-center position-absolute end-0">
-            <img src="https://img.freepik.com/premium-vector/man-character-avatar-icon-surfer-character-wetsuit-with-surfboard_51635-2323.jpg" class="card-trip-user avatar-bordered" />
-            <h2>Francisco Mimir</h2>
-            <h2><%#= @board.price_per_day %></h2>
-            <h2 class="card-trip-pricing">£99.99</h2>
-            <p><%#= @board.location %></p>
-            <h2>Le Wagon, Lisboa</h2>
-
-          </div>
-        </div>
+<div class="container">
+  <div class="show-imgs row mb-2" style="height:16rem;">
+    <div class="col-8 main-img" style="background-size:cover; background-color:white; border-radius: 10px; height: 200px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg'); height:100%">
+    </div>
+    <div class="col-4 grid">
+      <div class="my-2" style="border-radius: 10px; height: 50px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
       </div>
-
-      <div>
+      <div class="my-2" style="border-radius: 10px; height: 50px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
       </div>
-
-          <%= link_to "Go Back", boards_path %>
-          <%= link_to "edit", board_path %>
-          <%= link_to "Delete",
-          boards_path(@board),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-        %>
+      <div class="my-2" style="border-radius: 10px; height: 50px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
+      </div>
+      <div class="my-2" style="border-radius: 10px; height: 50px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
+      </div>
     </div>
   </div>
+  <div class="show-info row mb-2" style="height:16rem; border-radius: 10px;">
+    <div class="d-flex justify-content-between">
+      <div class="descriptions">
+        <h1><%= @board.title %></h1>
+        <h2><%= @board.category %></h2>
+        <p><%= @board.description %></p>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <img src="https://img.freepik.com/premium-vector/man-character-avatar-icon-surfer-character-wetsuit-with-surfboard_51635-2323.jpg" class="card-trip-user avatar-bordered" />
+        <h2>Francisco Mimir</h2>
+        <h2><%= @board.price_per_day %></h2>
+        <p><%= @board.location %></p>
+      </div>
+    </div>
+    <div class="board-map" style="border-radius: 10px; height: 200px; background-image: url('https://i.stack.imgur.com/HILmr.png')">
+    </div>
+    <div>
+      <h1>
+        <%= link_to "Go Back", boards_path %>
+      </h1>
+    </div>
+  </div>
+</div>

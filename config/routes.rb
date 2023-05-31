@@ -11,5 +11,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:index, :edit, :update, :destroy] do
     resources :reviews, only: [:new, :create]
+    get 'accept', to: "bookings#accept"
+    get 'decline', to: "bookings#decline"
   end
 end
