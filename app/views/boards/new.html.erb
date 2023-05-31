@@ -4,7 +4,7 @@
       <div class="form-card">
         <h1>List your surfboard</h1>
         <%= simple_form_for @board do |f| %>
-        <%= f.input :category, placeholder: 'Shortboard' %>
+        <%= f.input :category, collection: ['Shortboard', 'Longboard', 'Funboard'] %>
         <%= f.input :title, placeholder: 'Channel Islands Neck Beard' %>
         <%= f.input :description, placeholder: 'Have good drive and be quick on your feet. The perfect board for the smaller days.' %>
         <%= f.input :price_per_day, placeholder: '25€' %>
