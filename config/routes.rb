@@ -14,4 +14,6 @@ Rails.application.routes.draw do
     get 'accept', to: "bookings#accept"
     get 'decline', to: "bookings#decline"
   end
+
+  resources :bookings, only: [:destroy]
 end

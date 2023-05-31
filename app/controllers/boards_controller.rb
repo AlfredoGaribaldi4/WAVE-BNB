@@ -34,7 +34,7 @@ class BoardsController < ApplicationController
 
   def destroy
     @board.destroy
-    redirect_to boards_path
+    redirect_to bookings_path
   end
 
   private
