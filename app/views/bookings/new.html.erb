@@ -14,3 +14,9 @@
     </div>
   <% end %>
 <% end %>
+
+<% if @booking.errors.any? %>
+  <div class="alert alert-danger rounded px-4">
+      <%= "You cannot rent your own board!" %>
+  </div>
+<% end %>
