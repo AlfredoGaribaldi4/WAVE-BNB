@@ -6,6 +6,15 @@
          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
+  <%= simple_form_for(@board) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :location,
+        input_html: {data: {address_autocomplete_target: "location"}, class: "d-none"},
+        wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+      %>
+    </div>
+    <% end %>
+
 <div class="container py-5">
   <div class="row">
     <% @boards.each do |board| %>
