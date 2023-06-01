@@ -32,7 +32,9 @@
             </ul>
           </li>
         </ul>
-          <p id="aloha">Aloha, <%= current_user.first_name  %>! 🤙</p>
+          <% if user_signed_in? %>
+            <p id="aloha">Aloha, <%= current_user.first_name  %>! 🤙</p>
+          <% end %>
       </div>
     </div>
   </nav>
