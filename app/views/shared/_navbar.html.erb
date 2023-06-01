@@ -1,5 +1,6 @@
 <nav class="home-navbar navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
+
       <%= link_to "🏄", root_path, class:"navbar-brand" %>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,6 +32,7 @@
             </ul>
           </li>
         </ul>
+          <p id="aloha">Aloha, <%= current_user.first_name  %>! 🤙</p>
       </div>
     </div>
   </nav>
