@@ -36,17 +36,13 @@
     <h1>My Requests</h1>
       <% @boards.each do |board| %>
         <% board.bookings.each do |booking| %>
-          <h5><%= board.title %></h5>
-
             <% if booking.pending? %>
+              <h5><%= board.title %></h5>
               <p>Status: <%= booking.status %></p>
                 <%= link_to "Accept", booking_accept_path(booking), class: "btn-light text-decoration-none" %>
                   |
                 <%= link_to "Decline", booking_decline_path(booking), class: "btn-light text-decoration-none" %>
-            <% else %>
-              <p>Status: <%= booking.status %></p>
             <% end %>
-            <hr>
         <% end %>
       <% end %>
 
