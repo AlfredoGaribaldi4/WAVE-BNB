@@ -1,36 +1,20 @@
-<div class="container">
-  <div class="pages">
-    <div class="show-imgs row mb-2" style="height:16rem;">
-      <div class="main-img"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @board.photo.key, height: 300, crop: :fill %>')">
-      </div>
-      <%# <div class="col-4 grid">
-      <div class="my-2" style="border-radius: 10px; height: 50px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
-      </div>
-      <div class="my-2" style="border-radius: 10px; height: 50px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
-      </div>
-      <div class="my-2" style="border-radius: 10px; height: 50px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
-      </div>
-      <div class="my-2" style="border-radius: 10px; height: 50px; background-image: url('https://surfshop-i05.mycdn.no/mysimgprod/surfshop_mystore_no/images/S1v6n_Lost_Surfboards_Lost_RNF_96_6_0__38L__Surfeb_1.jpg/w600h600.jpg')">
-      </div> %>
-    <%# </div> %>
-    </div>
 
 
-    <div class="show-info row mb-2" style="height:16rem; border-radius: 10px;">
-      <div class="d-flex justify-content-between">
-        <div class="descriptions">
-          <h1><%= @board.title %></h1>
-          <h2><%= @board.category %></h2>
-          <p><%= @board.description %></p>
+  <div class="container bg-white">
+    <div class="d-flex justify-content-around">
+      <div class="col-md-6" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @board.photo.key, height: 300, crop: :fill %>'); height: 400px; margin: 30px 20px; background-size: cover; background-position: center; border-radius: 10px;">
+      </div>
+      <div class="col-md-6 align-items-center" style="padding: 100px 0;">
+        <div class="d-flex">
+          <h2 class="d-flex" style="margin-right: 20px;"><%= @board.title %></h2>
+          <img src="https://img.freepik.com/premium-vector/man-character-avatar-icon-surfer-character-wetsuit-with-surfboard_51635-2323.jpg" class="card-trip-user avatar-bordered"/>
         </div>
-
-        <div class="d-flex flex-column align-items-center">
-          <img src="https://img.freepik.com/premium-vector/man-character-avatar-icon-surfer-character-wetsuit-with-surfboard_51635-2323.jpg" class="card-trip-user avatar-bordered" />
-          <h2><%= @board.price_per_day %>€</h2>
-          <p><%= @board.location %></p>
-        </div>
+        <ul class="list-unstyled" style="margin-bottom: 20px;">
+          <li><strong>Description:</strong> <%= @board.title %></li>
+          <li><strong>Location:</strong> <%= @board.location %></li>
+          <li><strong>Price per day:</strong> <%= @board.price_per_day %>€</li>
+        </ul>
+        <%= link_to "Book this board now", new_board_booking_path(@board), class:"btn-all" %>
       </div>
     </div>
-    <%= link_to "Book this board now", new_board_booking_path(@board), class:"btn-all" %>
   </div>
-</div>
