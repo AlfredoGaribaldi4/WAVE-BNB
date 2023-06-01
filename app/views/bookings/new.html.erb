@@ -6,8 +6,8 @@
   <%= f.submit "Book this board!" %>
 <% end %>
 
-<% if @booking.errors.any? %>
-  <div class="alert alert-danger rounded px-4">
-      <%= "You cannot rent your own board!" %>
+<% if @booking.errors[:base].include?("You cannot book your own surfboard") %>
+  <div class="alert alert-danger rounded">
+  <%= flash.now[:alert] = "You cannot book your own surfboard!" %>
   </div>
 <% end %>
