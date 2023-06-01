@@ -26,7 +26,7 @@ class BoardsController < ApplicationController
     @board.user = current_user
 
     if @board.save
-      redirect_to boards_path(@board), notice: 'Bookmark was successfully created.'
+      redirect_to board_path(@board), notice: 'Bookmark was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end

@@ -1,5 +1,6 @@
 <nav class="home-navbar navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
+
       <%= link_to "🏄", root_path, class:"navbar-brand" %>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -20,7 +21,7 @@
               </li>
               <li><hr class="dropdown-divider"></li>
               <li>
-                <%= link_to "List your board", new_board_path, class:"dropdown-item" %>
+                <%= link_to "Share your board", new_board_path, class:"dropdown-item" %>
               </li>
               <li><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
             <% else %>
@@ -31,6 +32,9 @@
             </ul>
           </li>
         </ul>
+          <% if user_signed_in? %>
+            <p id="aloha">Aloha, <%= current_user.first_name  %>! 🤙</p>
+          <% end %>
       </div>
     </div>
   </nav>

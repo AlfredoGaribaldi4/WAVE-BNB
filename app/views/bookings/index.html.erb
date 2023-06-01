@@ -5,13 +5,14 @@
   <div class="row">
     <% @bookings.each do |booking| %>
       <div class="card shadow p-3 mb-5 bg-body" style="width: 18rem; margin: 20px; padding:15px; border-radius:20px;">
-        <img class="card-img-top" style= "border-radius:20px;" src="https://m.media-amazon.com/images/I/91wC2eK-1CL._AC_UF1000,1000_QL80_.jpg">
+        <%= cl_image_tag booking.board.photo.key, crop: :fill, class: "card-img-top", style: "border-radius: 20px; max-height: 250px" %>
         <div class="card-body">
 
         <h5><%= booking.board.title %></h5>
 
         <p>Date check in: <%= booking.date_check_in %></p>
         <p>Date check out: <%= booking.date_check_out %></p>
+        <p>Status: <%= booking.status %></p>
         <hr>
         <p>Total price: <%= booking.total_price %>€</p>
 
@@ -22,7 +23,7 @@
 
   <hr>
 
-    <h1>My Boards</h1>
+  <h1>My Boards</h1>
     <% @boards.each do |board| %>
       <h5> <%= board.title %>
         |
@@ -30,24 +31,29 @@
         <i class="fa-regular fa-trash-can p-3" style="color:black"></i>
       <% end %></h5>
     <% end %>
-    <hr>
+  <hr>
 
 
-    <h1>My Requests</h1>
+  <h1>My Requests</h1>
+    <div class="row">
       <% @boards.each do |board| %>
         <% board.bookings.each do |booking| %>
-          <h5><%= board.title %></h5>
-
-            <% if booking.pending? %>
-              <p>Status: <%= booking.status %></p>
-                <%= link_to "Accept", booking_accept_path(booking), class: "btn-light text-decoration-none" %>
-                  |
-                <%= link_to "Decline", booking_decline_path(booking), class: "btn-light text-decoration-none" %>
-            <% else %>
-              <p>Status: <%= booking.status %></p>
+          <% if booking.pending? %>
+            <div class="card shadow p-3 mb-5 bg-body" style="width: 18rem; margin: 20px; padding:15px; border-radius:20px;">
+              <div class="card-body">
+                <h5 class="card-title">Hey! Looks like someone wants your board!</h5>
+                <hr>
+                <p class="card-text"><%= booking.user.first_name %> wants to surf with your board: "<%= board.title %>"</p>
+                <p class="card-text">From: <%= booking.date_check_in %></p>
+                <p class="card-text">To: <%= booking.date_check_out %></p>
+                <p class="card-text">Status: <%= booking.status %></p>
+                  <%= link_to "Accept", booking_accept_path(booking), class: "btn-orange text-decoration-none" %>
+                    |
+                  <%= link_to "Decline", booking_decline_path(booking), class: "btn-orange text-decoration-none" %>
+              </div>
+            </div>
             <% end %>
-            <hr>
+          <% end %>
         <% end %>
-      <% end %>
-
+    </div>
 </div>

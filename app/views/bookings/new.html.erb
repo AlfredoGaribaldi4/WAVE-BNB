@@ -1,9 +1,9 @@
-<h1>Add a new Booking</h1>
+<h1>When are we going to ride the wave rogether?</h1>
 
 <%= simple_form_for [@board, @booking] do |f| %>
   <%= f.input :date_check_in, as: :date %>
   <%= f.input :date_check_out, as: :date %>
-  <%= f.submit "Book this board!" %>
+  <%= f.button :submit, "Let's swell!", class:"btn-all" %>
 <% end %>
 
 <% if @booking.errors[:base].include?("You cannot book your own surfboard") %>
