@@ -8,21 +8,14 @@ class BoardsController < ApplicationController
     @markers = @boards.geocoded.map do |board|
       {
         lat: board.latitude,
-        lng: board.longitude
+        lng: board.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { board: }),
+        marker_html: render_to_string(partial: "marker")
       }
     end
   end
 
-  def show
-    @boards = Board.all
-    @markers = @boards.geocoded.map do |board|
-      {
-        lat: board.latitude,
-        lng: board.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { board: })
-      }
-    end
-  end
+  def show; end
 
   def new
     @board = Board.new
