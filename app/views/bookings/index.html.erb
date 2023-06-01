@@ -1,28 +1,33 @@
 <div class="container">
 
     <h1>My bookings</h1>
-    <ul>
       <% @bookings.each do |booking| %>
-        <li> <%= booking.board.title %></li>
+        <h5><%= booking.board.title %></h5>
       <% end %>
-    </ul>
 
     <hr>
 
     <h1>My Boards</h1>
     <% @boards.each do |board| %>
-      <h5> <%= board.title %> | <%= link_to "delete", board_path(board), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></h5>
+      <h5> <%= board.title %>
+        |
+      <%= link_to board_path(board), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+        <i class="fa-regular fa-trash-can p-3" style="color:black"></i>
+      <% end %></h5>
     <% end %>
     <hr>
 
 
     <h1>My Requests</h1>
       <% @boards.each do |board| %>
-        <h5> <%= board.title %>
-          <% board.bookings.each do |booking| %>
+        <% board.bookings.each do |booking| %>
+          <h5><%= board.title %></h5>
 
             <% if booking.pending? %>
-              <p>Status: <%= booking.status %></p> <%= link_to "accept", booking_accept_path(booking) %> | <%= link_to "decline", booking_decline_path(booking) %>
+              <p>Status: <%= booking.status %></p>
+                <%= link_to "Accept", booking_accept_path(booking), class: "btn-light text-decoration-none" %>
+                  |
+                <%= link_to "Decline", booking_decline_path(booking), class: "btn-light text-decoration-none" %>
             <% else %>
               <p>Status: <%= booking.status %></p>
             <% end %>
