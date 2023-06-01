@@ -4,4 +4,13 @@
   <%= f.input :date_check_in, as: :date %>
   <%= f.input :date_check_out, as: :date %>
   <%= f.submit "Book this board!" %>
+  <% if @booking.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @booking.errors.full_messages.each do |message| %>
+          <li><%= "You can not rent your own board" %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 <% end %>
