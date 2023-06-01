@@ -7,7 +7,7 @@
 <% end %>
 
 <% if @booking.errors.any? %>
-  <div class="alert alert-danger rounded px-4">
+  <div class="alert alert-danger rounded alert-dismissible fade show">
       <%= "You cannot rent your own board!" %>
   </div>
 <% end %>

@@ -8,12 +8,13 @@ class Booking < ApplicationRecord
   validate :cannot_book_own_board
   validates :date_check_in, :date_check_out, presence: true
   validate :not_past_check_in, :not_past_check_out
+  validate :end_date_after_start_date
 
   private
 
   def cannot_book_own_board
     if board.user == user
-      errors.add(:user_id, "You cannot book your own surfboard")
+      errors.add(:user_id, "cannot book his own surfboard")
     end
   end
 
@@ -26,6 +27,12 @@ class Booking < ApplicationRecord
   def not_past_check_out
     if date_check_out.past?
       errors.add(:date_check_out, 'cannot be in the past')
+    end
+  end
+
+  def end_date_after_start_date
+    if date_check_out < date_check_in
+      errors.add(:date_check_out, "must be after the start date")
     end
   end
 end
