@@ -1,13 +1,26 @@
 <div class="container">
 
-    <h1>My bookings</h1>
-      <% @bookings.each do |booking| %>
-        <h5><%= booking.board.title %></h5>
-          -
-        <p>Total price: <%= booking.total_price %>€</p>
-      <% end %>
+  <h1>My bookings</h1>
 
-    <hr>
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <div class="card shadow p-3 mb-5 bg-body" style="width: 18rem; margin: 20px; padding:15px; border-radius:20px;">
+        <img class="card-img-top" style= "border-radius:20px;" src="https://m.media-amazon.com/images/I/91wC2eK-1CL._AC_UF1000,1000_QL80_.jpg">
+        <div class="card-body">
+
+        <h5><%= booking.board.title %></h5>
+
+        <p>Date check in: <%= booking.date_check_in %></p>
+        <p>Date check out: <%= booking.date_check_out %></p>
+        <hr>
+        <p>Total price: <%= booking.total_price %>€</p>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <hr>
 
     <h1>My Boards</h1>
     <% @boards.each do |board| %>
