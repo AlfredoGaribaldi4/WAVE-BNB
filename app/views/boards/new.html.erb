@@ -2,7 +2,7 @@
   <div class="row align-items-center">
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="form-card">
-        <h1>List your surfboard</h1>
+        <h1>Share your board with the world!</h1>
         <%= simple_form_for @board do |f| %>
         <%= f.input :category, collection: ['Shortboard', 'Longboard', 'Funboard'] %>
         <%= f.input :title, placeholder: 'Channel Islands Neck Beard' %>
@@ -11,7 +11,7 @@
         <%= f.input :location, placeholder: 'Costa da Caparica' %>
 
         <%= f.input :photo, as: :file %>
-        <%= f.button :submit, class:"btn-all" %>
+        <%= f.button :submit, 'Share your board!', class:"btn-all" %>
         <% end %>
       </div>
     </div>
