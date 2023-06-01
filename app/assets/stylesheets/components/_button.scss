@@ -19,17 +19,16 @@
 
 
 .btn-orange{
-  padding: 5px 30px;
+  padding: 5px 20px;
+  width: 300px;
   background-color: #C78601;
   box-shadow: 1px 1px 10px gray;
   border-radius: 12px;
   font-weight: lighter;
   font-size: 28px;
   color: #f0dcb4;
-  position: absolute;
-  bottom: 10px;
-  width: 100px;
   font-weight: bold;
+  margin-top: 25px;
 
 
   &:hover {
