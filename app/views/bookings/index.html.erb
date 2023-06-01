@@ -44,7 +44,8 @@
                 <h5 class="card-title">Hey! Looks like someone wants your board!</h5>
                 <hr>
                 <p class="card-text"><%= booking.user.first_name %> wants to surf with your board: "<%= board.title %>"</p>
-                <p class="card-text">From: <%= booking.date_check_in %> to <%= booking.date_check_out %></p>
+                <p class="card-text">From: <%= booking.date_check_in %></p>
+                <p class="card-text">To: <%= booking.date_check_out %></p>
                 <p class="card-text">Status: <%= booking.status %></p>
                   <%= link_to "Accept", booking_accept_path(booking), class: "btn-orange text-decoration-none" %>
                     |
