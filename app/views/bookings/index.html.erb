@@ -5,13 +5,14 @@
   <div class="row">
     <% @bookings.each do |booking| %>
       <div class="card shadow p-3 mb-5 bg-body" style="width: 18rem; margin: 20px; padding:15px; border-radius:20px;">
-        <%= cl_image_tag booking.board.photo.key, crop: :fill, class: "card-img-top", style: "border-radius: 20px" %>
+        <%= cl_image_tag booking.board.photo.key, crop: :fill, class: "card-img-top", style: "border-radius: 20px; max-height: 250px" %>
         <div class="card-body">
 
         <h5><%= booking.board.title %></h5>
 
         <p>Date check in: <%= booking.date_check_in %></p>
         <p>Date check out: <%= booking.date_check_out %></p>
+        <p>Status: <%= booking.status %></p>
         <hr>
         <p>Total price: <%= booking.total_price %>€</p>
 
