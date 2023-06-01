@@ -43,7 +43,14 @@ body {
   }
 }
 
-#btn-orange{
+
+
+.home-navbar {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.btn-orange{
   padding: 5px 30px;
   background-color: #C78601;
   box-shadow: 1px 1px 10px gray;
@@ -53,15 +60,13 @@ body {
   color: #f0dcb4;
   margin-top: 300px;
   width: 60%;
+  font-weight: bold;
 
 
   &:hover {
     background-color: #F7A701;
     opacity: 0.9;
+    color: #f0dcb4;
+    box-shadow: 1px 1px 10px white;
   }
-}
-
-.home-navbar {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
 }

@@ -1,10 +1,11 @@
 .btn-all{
   padding: 10px 20px;
-  background-color: #f0dcb4;
+  background-color: #C78601;
+  font-weight: bold;
   box-shadow: 1px 1px 10px gray;
   border-radius: 12px;
-  color: black;
-  margin-top: 70px;
+  color: #f0dcb4;
+  margin-top: 30px;
   text-decoration: none;
 
 
@@ -12,13 +13,35 @@
     background-color: #F7A701;
     opacity: 0.9;
     color: #f0dcb4;
+    box-shadow: 1px 1px 10px white;
   }
 }
 
-.btn-light {
+
+.btn-orange{
+  padding: 5px 30px;
+  background-color: #C78601;
+  box-shadow: 1px 1px 10px gray;
+  border-radius: 12px;
+  font-weight: lighter;
+  font-size: 28px;
   color: #f0dcb4;
+  margin-top: 300px;
+  width: 60%;
+  font-weight: bold;
+
 
   &:hover {
-    color: #F7A701;
+    background-color: #F7A701;
+    opacity: 0.9;
+    box-shadow: 1px 1px 10px white;
+  }
+}
+
+.btn-orange {
+  color: #F7A701;
+
+  &:hover {
+    color: #5a3d02;
   }
 }
