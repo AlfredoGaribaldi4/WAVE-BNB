@@ -4,9 +4,24 @@ class BoardsController < ApplicationController
 
   def index
     @boards = Board.all
+
+    @markers = @boards.geocoded.map do |board|
+      {
+        lat: board.latitude,
+        lng: board.longitude
+      }
+    end
   end
 
   def show
+    @boards = Board.all
+    @markers = @boards.geocoded.map do |board|
+      {
+        lat: board.latitude,
+        lng: board.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { board: })
+      }
+    end
   end
 
   def new
