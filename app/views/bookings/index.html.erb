@@ -23,7 +23,7 @@
 
   <hr>
 
-    <h1>My Boards</h1>
+  <h1>My Boards</h1>
     <% @boards.each do |board| %>
       <h5> <%= board.title %>
         |
@@ -31,20 +31,28 @@
         <i class="fa-regular fa-trash-can p-3" style="color:black"></i>
       <% end %></h5>
     <% end %>
-    <hr>
+  <hr>
 
 
-    <h1>My Requests</h1>
+  <h1>My Requests</h1>
+    <div class="row">
       <% @boards.each do |board| %>
         <% board.bookings.each do |booking| %>
-            <% if booking.pending? %>
-              <h5><%= board.title %></h5>
-              <p>Status: <%= booking.status %></p>
-                <%= link_to "Accept", booking_accept_path(booking), class: "btn-light text-decoration-none" %>
-                  |
-                <%= link_to "Decline", booking_decline_path(booking), class: "btn-light text-decoration-none" %>
+          <% if booking.pending? %>
+            <div class="card shadow p-3 mb-5 bg-body" style="width: 18rem; margin: 20px; padding:15px; border-radius:20px;">
+              <div class="card-body">
+                <h5 class="card-title">Hey! Looks like someone wants your board!</h5>
+                <hr>
+                <p class="card-text"><%= booking.user.first_name %> wants to surf with your board: "<%= board.title %>"</p>
+                <p class="card-text">From: <%= booking.date_check_in %> to <%= booking.date_check_out %></p>
+                <p class="card-text">Status: <%= booking.status %></p>
+                  <%= link_to "Accept", booking_accept_path(booking), class: "btn-orange text-decoration-none" %>
+                    |
+                  <%= link_to "Decline", booking_decline_path(booking), class: "btn-orange text-decoration-none" %>
+              </div>
+            </div>
             <% end %>
+          <% end %>
         <% end %>
-      <% end %>
-
+    </div>
 </div>
