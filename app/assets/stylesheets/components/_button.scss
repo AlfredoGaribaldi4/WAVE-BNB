@@ -37,3 +37,21 @@
     box-shadow: 1px 1px 10px white;
   }
 }
+.btn-review {
+    padding: 5px 20px;
+    width: 200px;
+    background-color: #C78601;
+    box-shadow: 1px 1px 10px gray;
+    border-radius: 12px;
+    font-weight: lighter;
+    font-size: 16px;
+    color: #f0dcb4;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #F7A701;
+      opacity: 0.9;
+      box-shadow: 1px 1px 10px white;
+      color: #f0dcb4;
+    }
+}

@@ -1,9 +1,9 @@
 <h1>When are we going to ride the wave rogether?</h1>
 
 <%= simple_form_for [@board, @booking] do |f| %>
-  <%= f.input :date_check_in, as: :date %>
-  <%= f.input :date_check_out, as: :date %>
-  <%= f.submit "Book this board!" %>
+  <%= f.input :date_check_in, html5: :true %>
+  <%= f.input :date_check_out, html5: :true %>
+
   <% if @booking.errors.any? %>
     <div class="alert alert-danger">
       <ul>
