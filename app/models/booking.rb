@@ -28,6 +28,7 @@ class Booking < ApplicationRecord
   def not_past_check_out
     if date_check_out.past?
       errors.add(:date_check_out, 'cannot be in the past')
+
     end
   end
 

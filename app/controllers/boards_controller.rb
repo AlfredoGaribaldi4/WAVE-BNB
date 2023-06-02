@@ -5,6 +5,13 @@ class BoardsController < ApplicationController
   def index
     @boards = Board.all
 
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        boards.location @@ :query
+      SQL
+      @boards = @boards.where(sql_subquery, query: params[:query])
+    end
+
     @markers = @boards.geocoded.map do |board|
       {
         lat: board.latitude,
@@ -15,7 +22,8 @@ class BoardsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+  end
 
   def new
     @board = Board.new
