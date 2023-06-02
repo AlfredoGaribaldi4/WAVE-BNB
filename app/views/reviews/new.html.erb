@@ -1,6 +1,6 @@
 <h1>Tell us your experience with this board!🏄</h1>
-<%= simple_form_for([@booking, @review]) do |f| %>
+<%= simple_form_for [@booking, @review] do |f| %>
   <%= f.input :content %>
-  <%= f.input :rating, as: :integer %>
+  <%= f.input :rating, collection: (0..5) %>
   <%= f.button :submit, class:"btn-all" %>
 <% end %>
