@@ -47,9 +47,9 @@
                 <p class="card-text">From: <%= booking.date_check_in %></p>
                 <p class="card-text">To: <%= booking.date_check_out %></p>
                 <p class="card-text">Status: <%= booking.status %></p>
-                  <%= link_to "Accept", booking_accept_path(booking), class: "btn-orange text-decoration-none" %>
+                  <%= link_to "Accept", booking_accept_path(booking), class: "btn-status text-decoration-none" %>
                     |
-                  <%= link_to "Decline", booking_decline_path(booking), class: "btn-orange text-decoration-none" %>
+                  <%= link_to "Decline", booking_decline_path(booking), class: "btn-status text-decoration-none" %>
               </div>
             </div>
             <% end %>
