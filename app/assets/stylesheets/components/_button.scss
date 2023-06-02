@@ -28,7 +28,7 @@
   font-size: 28px;
   color: #f0dcb4;
   font-weight: bold;
-  margin-top: 35px;
+  margin-top: 60px;
 
 
   &:hover {
@@ -52,7 +52,7 @@
       background-color: #F7A701;
       opacity: 0.9;
       box-shadow: 1px 1px 10px white;
-      color: #f0dcb4;
+      color: white;
     }
   }
 
@@ -65,6 +65,14 @@
 }
 
 .btn-primary {
-  background-color: #F7A701;
-  border-color: #F7A701;
+  background-color: #C78601;
+  border-color: #C78601;
+
+  &:hover {
+    background-color: #F7A701;
+    opacity: 0.9;
+    box-shadow: 1px 1px 10px white;
+    color: white;
+    border-color: #F7A701;
+  }
 }
