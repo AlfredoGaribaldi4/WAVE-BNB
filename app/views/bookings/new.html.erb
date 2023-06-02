@@ -1,8 +1,18 @@
 <h1>When are we going to ride the wave rogether?</h1>
 
 <%= simple_form_for [@board, @booking] do |f| %>
-  <%= f.input :date_check_in, as: :date %>
-  <%= f.input :date_check_out, as: :date %>
+  <%= f.input :date_check_in, html5: :true %>
+  <%= f.input :date_check_out, html5: :true %>
+
+  <% if @booking.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @booking.errors.full_messages.each do |message| %>
+          <li><%= "You can not rent your own board" %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <%= f.button :submit, "Let's swell!", class:"btn-all" %>
 <% end %>
 

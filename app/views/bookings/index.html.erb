@@ -16,6 +16,7 @@
         <hr>
         <p>Total price: <%= booking.total_price %>€</p>
 
+        <%= link_to "Enjoyed the ride?", new_booking_review_path(booking), class:"btn-review btn" %>
         </div>
       </div>
     <% end %>

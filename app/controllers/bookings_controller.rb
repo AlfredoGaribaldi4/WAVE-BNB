@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
   def index
     @boards = Board.where(user: current_user)
     @bookings = Booking.where(user: current_user)
+    @review = Review.new
   end
 
   def new
