@@ -1,24 +1,6 @@
 <div class="container">
 
   <div class="d-flex mb-3">
-<<<<<<< HEAD
-  <% if current_user.photo.attached? %>
-    <%= cl_image_tag(current_user.photo.key, class: "card-trip-user avatar-bordered mb-4") %>
-  <% else %>
-    <img src="https://img.freepik.com/premium-vector/man-character-avatar-icon-surfer-character-wetsuit-with-surfboard_51635-2323.jpg" class="card-trip-user avatar-bordered mb-4" alt="default-photo">
-  <% end %>
-  <h5 style="margin-top: 12px; margin-left: 10px;color: black;"><%= current_user.first_name  %>'s profile</h5>
-  </div>
-  <hr>
-
-  <h1>Bookings</h1>
-
-  <div class="row">
-    <% @bookings.each do |booking| %>
-      <div class="card shadow p-3 mb-5 bg-body" style="width: 18rem; margin: 20px; padding:15px; border-radius:20px;">
-        <%= cl_image_tag booking.board.photo.key, crop: :fill, class: "card-img-top", style: "border-radius: 30px; max-height: 250px" %>
-        <div class="card-body">
-=======
     <img src="https://img.freepik.com/premium-vector/man-character-avatar-icon-surfer-character-wetsuit-with-surfboard_51635-2323.jpg" class="card-trip-user avatar-bordered mb-4"/>
     <h5 style="margin-top: 9px; margin-left: 10px;color: black;"><%= current_user.first_name  %>'s profile</h5>
     </div>
@@ -29,7 +11,6 @@
       <% if @bookings.empty? %>
         <em>You haven't made a book yet!  <%= link_to "Go back and find a board!", boards_path, class:"btn-status text-decoration-none" %></em>
       <% end %>
->>>>>>> 344637d76a7aa95da19080c8a4acecdfb3452ce4
 
       <% @bookings.each do |booking| %>
         <div class="card shadow p-3 mb-5 bg-body" style="width: 19rem; margin: 20px; padding:15px; border-radius:20px;">
