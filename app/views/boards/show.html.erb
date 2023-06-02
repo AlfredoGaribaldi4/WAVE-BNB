@@ -1,9 +1,9 @@
 
+      <div class="col-md-6" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @board.photo.key, height: 300, crop: :fill %>'); height: 400px; margin: 30px 20px; background-size: cover; background-position: center; border-radius: 10px;">
+      </div>
 
   <div class="container bg-white">
     <div class="d-flex justify-content-around">
-      <div class="col-md-6" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @board.photo.key, height: 300, crop: :fill %>'); height: 400px; margin: 30px 20px; background-size: cover; background-position: center; border-radius: 10px;">
-      </div>
       <div class="col-md-6 align-items-center" style="padding: 100px 0;">
         <div class="d-flex">
           <h2 class="d-flex" style="margin-right: 20px;"><%= @board.title %></h2>
@@ -15,6 +15,13 @@
           <li><strong>Price per day:</strong> <%= @board.price_per_day %>€</li>
         </ul>
         <%= link_to "Book this board now", new_board_booking_path(@board), class:"btn-all" %>
+
+        <h2> reviews </h2>
+        <% @board.bookings.each do |booking| %>
+          <% booking.reviews.each do |review| %>
+            <%= review.content %>
+          <% end %>
+        <% end %>
       </div>
     </div>
-  </div>
+</div>
