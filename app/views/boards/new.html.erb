@@ -1,7 +1,7 @@
 <div class="container py-5">
   <div class="row align-items-center">
     <div class="col-12 col-md-6 offset-lg-3">
-      <div class="form-card rounded">
+      <div class="form-card">
         <h2 class="mb-5" style="color:#404040;">Share your board with the world</h2>
         <%= simple_form_for @board do |f| %>
         <%= f.input :category, collection: ['Shortboard', 'Longboard', 'Funboard'] %>
