@@ -1,6 +1,7 @@
 <div class="container">
 
   <div class="d-flex mb-3">
+<<<<<<< HEAD
   <% if current_user.photo.attached? %>
     <%= cl_image_tag(current_user.photo.key, class: "card-trip-user avatar-bordered mb-4") %>
   <% else %>
@@ -17,40 +18,64 @@
       <div class="card shadow p-3 mb-5 bg-body" style="width: 18rem; margin: 20px; padding:15px; border-radius:20px;">
         <%= cl_image_tag booking.board.photo.key, crop: :fill, class: "card-img-top", style: "border-radius: 30px; max-height: 250px" %>
         <div class="card-body">
+=======
+    <img src="https://img.freepik.com/premium-vector/man-character-avatar-icon-surfer-character-wetsuit-with-surfboard_51635-2323.jpg" class="card-trip-user avatar-bordered mb-4"/>
+    <h5 style="margin-top: 9px; margin-left: 10px;color: black;"><%= current_user.first_name  %>'s profile</h5>
+    </div>
+    <hr>
+    <h1>Bookings</h1>
 
-        <h5><%= booking.board.title %></h5>
+    <div class="row">
+      <% if @bookings.empty? %>
+        <em>You haven't made a book yet!  <%= link_to "Go back and find a board!", boards_path, class:"btn-status text-decoration-none" %></em>
+      <% end %>
+>>>>>>> 344637d76a7aa95da19080c8a4acecdfb3452ce4
 
-        <p>Date check in: <%= booking.date_check_in %></p>
-        <p>Date check out: <%= booking.date_check_out %></p>
-        <p>Status: <%= booking.status %></p>
-        <hr>
-        <p>Total price: <%= booking.total_price %>€</p>
+      <% @bookings.each do |booking| %>
+        <div class="card shadow p-3 mb-5 bg-body" style="width: 19rem; margin: 20px; padding:15px; border-radius:20px;">
+          <%= cl_image_tag booking.board.photo.key, crop: :fill, class: "card-img-top", style: "border-radius: 20px; max-height: 250px" %>
+          <div class="card-body">
 
-        <%= link_to "Enjoyed the ride?", new_booking_review_path(booking), class:"btn-review btn" %>
+          <h5><%= booking.board.title %></h5>
+
+          <p>Date check in: <%= booking.date_check_in %></p>
+          <p>Date check out: <%= booking.date_check_out %></p>
+          <p>Status: <%= booking.status %></p>
+          <hr>
+          <p>Total price: <%= booking.total_price %>€</p>
+
+          <%= link_to "Enjoyed the ride?", new_booking_review_path(booking), class:"btn-review btn" %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
   </div>
 
   <hr>
+  <div class="row">
+    <% if @boards.any? %>
+      <h1>My Boards</h1>
 
-  <h1>Boards</h1>
-
-    <% @boards.each do |board| %>
-      <h5> <%= board.title %>
-      <%= link_to board_path(board), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-        <i class="fa-regular fa-trash-can p-3" style="color:black"></i>
-      <% end %></h5>
-    <% end %>
-  <hr>
-
+      <% @boards.each do |board| %>
+        <div class="card shadow p-3 mb-5 bg-body" style="width: 19rem; margin: 20px; padding:15px; border-radius:20px;">
+          <%= cl_image_tag board.photo.key, crop: :fill, class: "card-img-top", style: "border-radius: 20px; max-height: 250px" %>
+            <div class="card-body">
+              <h5><%= board.title %>
+              <%= link_to board_path(board), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-regular fa-trash-can p-3" style="color:black"></i>
+              <% end %></h5>
+            </div>
+          </div>
+      <% end %>
+    <hr>
+  <% end %>
+</div>
 
   <h1>Requests</h1>
     <div class="row">
       <% @boards.each do |board| %>
         <% board.bookings.each do |booking| %>
           <% if booking.pending? %>
-            <div class="card shadow p-3 mb-5 bg-body" style="width: 18rem; margin: 20px; padding:15px; border-radius:20px;">
+            <div class="card shadow p-3 mb-5 bg-body" style="width: 19rem; margin: 20px; padding:15px; border-radius:20px;">
               <div class="card-body">
                 <h5 class="card-title">Hey! Looks like someone wants your board!</h5>
                 <hr>
@@ -63,8 +88,8 @@
                   <%= link_to "Decline", booking_decline_path(booking), class: "btn-status text-decoration-none" %>
               </div>
             </div>
-            <% end %>
           <% end %>
         <% end %>
+      <% end %>
     </div>
 </div>
