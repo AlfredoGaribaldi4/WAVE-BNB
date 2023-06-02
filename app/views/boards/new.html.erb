@@ -1,8 +1,8 @@
 <div class="container py-5">
   <div class="row align-items-center">
     <div class="col-12 col-md-6 offset-lg-3">
-      <div class="form-card">
-        <h1>Share your board with the world!</h1>
+      <div class="form-card rounded">
+        <h2 class="mb-5" style="color:#404040;">Share your board with the world</h2>
         <%= simple_form_for @board do |f| %>
         <%= f.input :category, collection: ['Shortboard', 'Longboard', 'Funboard'] %>
         <%= f.input :title, placeholder: 'Channel Islands Neck Beard' %>
@@ -11,7 +11,7 @@
         <%= f.input :location, placeholder: 'Costa da Caparica' %>
 
         <%= f.input :photo, as: :file %>
-        <%= f.button :submit, 'Share your board!', class:"btn-all" %>
+        <%= f.button :submit, 'Share your board', class:"btn-all", style:"width: 180px; font-weight: bold;" %>
         <% end %>
       </div>
     </div>

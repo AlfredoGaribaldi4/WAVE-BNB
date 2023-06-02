@@ -1,7 +1,7 @@
 <nav class="home-navbar navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
 
-      <%= link_to "🏄", root_path, class:"navbar-brand" %>
+      <%= link_to image_tag("wb-logo.png", alt: "WaveBnB", width: 60), root_path, class:"navbar-brand" %>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -10,20 +10,20 @@
           <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Menu
+              <i class="fa-solid fa-bars-staggered fa-bounce fa-xl"></i>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <%= link_to "See boards", boards_path, class:"dropdown-item" %>
+                <%= link_to "All surfboards", boards_path, class:"dropdown-item" %>
               </li>
-              <li>
-                <%= link_to "Profile", bookings_path, class:"dropdown-item" %>
-              </li>
-              <li><hr class="dropdown-divider"></li>
               <li>
                 <%= link_to "Share your board", new_board_path, class:"dropdown-item" %>
               </li>
-              <li><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <%= link_to "My profile", bookings_path, class:"dropdown-item" %>
+              </li>
+              <li><%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
             <% else %>
               <li class="nav-item">
                 <%= link_to "Login", new_user_session_path, class: "nav-link" %>
@@ -34,7 +34,8 @@
         </ul>
       </div>
        <% if user_signed_in? %>
-            <p id="aloha">Aloha, <%= current_user.first_name  %>! 🤙</p>
-          <% end %>
+          <p id="aloha">Aloha, <%= current_user.first_name  %>! </p>
+          <i class="fa-regular fa-hand fa-shake fa-xl" style="color: #6b6b6b;"></i>
+        <% end %>
     </div>
   </nav>

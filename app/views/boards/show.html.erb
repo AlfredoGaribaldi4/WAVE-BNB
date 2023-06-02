@@ -7,11 +7,11 @@
       <div class="col-md-6 align-items-center" style="padding: 100px 0;">
         <div class="d-flex">
           <h2 class="d-flex" style="margin-right: 20px;"><%= @board.title %></h2>
-          <img src="https://img.freepik.com/premium-vector/man-character-avatar-icon-surfer-character-wetsuit-with-surfboard_51635-2323.jpg" class="card-trip-user avatar-bordered"/>
+          <img src="https://img.freepik.com/premium-vector/man-character-avatar-icon-surfer-character-wetsuit-with-surfboard_51635-2323.jpg" class="card-trip-user avatar-bordered mb-4"/>
         </div>
-        <ul class="list-unstyled" style="margin-bottom: 20px;">
-          <li><strong>Description:</strong> <%= @board.description %></li>
-          <li><strong>Location:</strong> <%= @board.location %></li>
+        <ul class="list-unstyled" style="margin-bottom: 50px; margin-top: 30px;">
+          <li style="margin-bottom: 10px;"><strong>Description:</strong> <%= @board.description %></li>
+          <li style="margin-bottom: 10px;"><strong>Location:</strong> <%= @board.location %></li>
           <li><strong>Price per day:</strong> <%= @board.price_per_day %>€</li>
         </ul>
         <%= link_to "Book this board now", new_board_booking_path(@board), class:"btn-all" %>
