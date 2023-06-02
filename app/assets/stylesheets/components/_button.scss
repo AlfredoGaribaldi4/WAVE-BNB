@@ -54,4 +54,12 @@
       box-shadow: 1px 1px 10px white;
       color: #f0dcb4;
     }
+  }
+
+.btn-status {
+  color: #C78601;
+
+  &:hover {
+    color: #483000;
+  }
 }
