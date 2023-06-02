@@ -19,29 +19,21 @@
 
 
 .btn-orange{
-  padding: 5px 30px;
+  padding: 5px 20px;
+  width: 300px;
   background-color: #C78601;
   box-shadow: 1px 1px 10px gray;
   border-radius: 12px;
   font-weight: lighter;
   font-size: 28px;
   color: #f0dcb4;
-  margin-top: 300px;
-  width: 60%;
   font-weight: bold;
+  margin-top: 35px;
 
 
   &:hover {
     background-color: #F7A701;
     opacity: 0.9;
     box-shadow: 1px 1px 10px white;
-  }
-}
-
-.btn-orange {
-  color: #F7A701;
-
-  &:hover {
-    color: #5a3d02;
   }
 }
