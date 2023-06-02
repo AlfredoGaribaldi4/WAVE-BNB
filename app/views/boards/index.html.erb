@@ -1,7 +1,20 @@
 <br>
 <h1 class="text-center">Where do you wanna surf next?</h1>
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: boards_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Tell me where!"
+        %>
+      <%= submit_tag "Find it!", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
 <div class="d-flex justify-content-center my-5">
-  <div class="shadow border border-primary rounded" style="width: 90%; height: 400px;"
+  <div class="shadow" style="width: 90%; height: 400px"
           data-controller="map"
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -11,14 +24,27 @@
 
 <div class="container py-5">
   <div class="row">
-    <% @boards.each do |board| %>
-      <div class="co-12 col-sm-6 col-md-4 mb-3">
-        <%= link_to board_path(board), class:"text-decoration-none" do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path board.photo.key, height: 300, crop: :fill %>')"
->            <%= board.title %>
-          </div>
-        <% end %>
-      </div>
+    <% if @boards.any? %>
+      <% @boards.each do |board| %>
+        <div class="co-12 col-sm-6 col-md-4 mb-3">
+          <%= link_to board_path(board), class:"text-decoration-none" do %>
+            <div class="container-img">
+              <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path board.photo.key, height: 300, crop: :fill %>')">
+                <div class="overlay">
+                  <div class="text">
+                    <h3><%= board.title %>
+                      <br>
+                      <hr>
+                    <%= board.price_per_day %>€</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <h2><em>Sorry, ain't no boards available to surf there!</em></h2>
     <% end %>
   </div>
 </div>
